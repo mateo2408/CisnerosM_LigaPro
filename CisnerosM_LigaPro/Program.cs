@@ -1,4 +1,5 @@
-// filepath: /Users/mateocisneros/VisualCode/CisnerosM_LigaPro/CisnerosM_LigaPro/Program.cs
+using CisnerosM_LigaPro.Repositories; // Ensure this matches the namespace of EquipoRepository
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,7 +12,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
