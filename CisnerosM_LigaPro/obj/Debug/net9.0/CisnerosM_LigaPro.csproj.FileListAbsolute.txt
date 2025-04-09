@@ -95,3 +95,4 @@
 /Users/mateocisneros/VisualCode/CisnerosM_LigaPro/CisnerosM_LigaPro/obj/Debug/net9.0/CisnerosM_LigaPro.pdb
 /Users/mateocisneros/VisualCode/CisnerosM_LigaPro/CisnerosM_LigaPro/obj/Debug/net9.0/CisnerosM_LigaPro.genruntimeconfig.cache
 /Users/mateocisneros/VisualCode/CisnerosM_LigaPro/CisnerosM_LigaPro/obj/Debug/net9.0/ref/CisnerosM_LigaPro.dll
+/Users/mateocisneros/VisualCode/CisnerosM_LigaPro/CisnerosM_LigaPro/obj/Debug/net9.0/CisnerosM_LigaPro.sourcelink.json

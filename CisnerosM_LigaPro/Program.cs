@@ -1,7 +1,9 @@
+// filepath: /Users/mateocisneros/VisualCode/CisnerosM_LigaPro/CisnerosM_LigaPro/Program.cs
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<EquipoRepository>();
 
 var app = builder.Build();
 
@@ -21,9 +23,8 @@ app.UseAuthorization();
 app.MapStaticAssets();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
-
+        name: "default",
+        pattern: "{controller=Equipo}/{action=Index}/{id?}"
+);
 
 app.Run();
