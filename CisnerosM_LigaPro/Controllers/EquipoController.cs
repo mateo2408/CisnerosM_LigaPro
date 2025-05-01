@@ -7,51 +7,50 @@ namespace CisnerosM_LigaPro.Controllers
     {
         private readonly EquipoRepository _equipoRepository;
 
-        // Constructor con inyección de dependencias
+        // Constructor with dependency injection
         public EquipoController(EquipoRepository equipoRepository)
         {
             _equipoRepository = equipoRepository;
         }
 
-        // Acción para listar todos los equipos
+        // Action to list all teams
         public IActionResult Index()
         {
-
-            var equipos = _equipoRepository.DevuelveListaEquipos();
-            return View(equipos);
+            var equipos = _equipoRepository.GetEquipos();
+            return View(equipos); // Pass the list of teams to the view
         }
 
-        // Acción para mostrar los detalles de un equipo
+        // Action to show team details
         public IActionResult Detalles(int id)
         {
-            var equipo = _equipoRepository.ObtenerEquipoPorId(id);
+            var equipo = _equipoRepository.GetEquipoById(id);
             if (equipo == null)
             {
                 return NotFound();
             }
-            return View(equipo);
+            return View(equipo); // Pass the team details to the view
         }
 
-        // Acción para mostrar el formulario de edición
+        // Action to show the edit form
         public IActionResult Editar(int id)
         {
-            var equipo = _equipoRepository.ObtenerEquipoPorId(id);
+            var equipo = _equipoRepository.GetEquipoById(id);
             if (equipo == null)
             {
                 return NotFound();
             }
-            return View(equipo);
+            return View(equipo); // Pass the team details to the view
         }
 
-        // Acción para mostrar el formulario de eliminación
+        // Action to show the delete confirmation
         public IActionResult Eliminar(int id)
         {
-            var equipo = _equipoRepository.ObtenerEquipoPorId(id);
+            var equipo = _equipoRepository.GetEquipoById(id);
             if (equipo == null)
             {
                 return NotFound();
             }
-            return View(equipo);
+            return View(equipo); // Pass the team details to the view
         }
     }
 }

@@ -1,48 +1,27 @@
+using CisnerosM_LigaPro;
+using CisnerosM_LigaPro.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace CisnerosM_LigaPro.Repositories
 {
     public class EquipoRepository
     {
-        private readonly List<Equipo> _equipos;
+        private readonly ApplicationDbContext _context;
 
-        public EquipoRepository()
+        public EquipoRepository(ApplicationDbContext context)
         {
-            _equipos = new List<Equipo>
-            {
-                new Equipo
-                {
-                    Id = 1, Nombre = "Liga de Quito", PartidosJugados = 10, PartidosGanados = 10, PartidosEmpatados = 0,
-                    PartidosPerdidos = 0
-                },
-                new Equipo
-                {
-                    Id = 2, Nombre = "Barcelona SC", PartidosJugados = 12, PartidosGanados = 8, PartidosEmpatados = 2,
-                    PartidosPerdidos = 2
-                }
-            };
+            _context = context;
         }
 
-        public IEnumerable<Equipo> DevuelveListaEquipos()
-        {
-            return _equipos;
-        }
+        public IEnumerable<Equipo> GetEquipos() => _context.Equipos.ToList();
 
-        public Equipo ObtenerEquipoPorId(int id)
-        {
-            return _equipos.FirstOrDefault(e => e.Id == id) ?? throw new KeyNotFoundException($"Equipo with Id {id} not found.");
-        }
+        public Equipo GetEquipoById(int id) =>
+            _context.Equipos.FirstOrDefault(e => e.Id == id);
 
-        public Equipo DevuelveEquipoPorId(int id)
+        public void UpdateEquipo(Equipo equipo)
         {
-            Equipo equipo = new Equipo
-            {
-                Id = id,
-                Nombre = "Barcelona SC",
-                PartidosJugados = 12,
-                PartidosGanados = 8,
-                PartidosEmpatados = 2,
-                PartidosPerdidos = 2
-            };
-            return equipo;
+            _context.Equipos.Update(equipo);
+            _context.SaveChanges();
         }
     }
 }

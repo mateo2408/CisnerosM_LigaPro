@@ -1,10 +1,14 @@
-using CisnerosM_LigaPro.Repositories; // Ensure this matches the namespace of EquipoRepository
+using CisnerosM_LigaPro.Data;
+using CisnerosM_LigaPro.Repositories;
+using Microsoft.EntityFrameworkCore; // Ensure this matches the namespace of EquipoRepository
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<EquipoRepository>();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
