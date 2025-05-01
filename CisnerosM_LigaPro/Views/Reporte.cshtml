@@ -1,0 +1,69 @@
+@page
+@model CisnerosM_LigaPro.Models.ReporteViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+
+<h2>Top 5 Goleadores</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Goles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jugador in Model.Goleadores)
+        {
+            <tr>
+                <td>@jugador.Nombre</td>
+                <td>@jugador.Goles</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Top 5 Asistentes</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Asistencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jugador in Model.Asistentes)
+        {
+            <tr>
+                <td>@jugador.Nombre</td>
+                <td>@jugador.Asistencias</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Top 5 Equipos con Mayor Presupuesto</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Equipo</th>
+            <th>Presupuesto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var equipo in Model.EquiposPresupuesto)
+        {
+            <tr>
+                <td>@equipo.Nombre</td>
+                <td>@equipo.Presupuesto</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</html>

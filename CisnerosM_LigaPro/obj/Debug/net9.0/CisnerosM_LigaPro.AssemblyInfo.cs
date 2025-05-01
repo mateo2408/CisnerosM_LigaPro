@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CisnerosM_LigaPro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6587f4605f7b836e24fd15bb496dee50d684d23")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a52bc4a23407bf1fb72763f0e4bf460cd32095bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("CisnerosM_LigaPro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CisnerosM_LigaPro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

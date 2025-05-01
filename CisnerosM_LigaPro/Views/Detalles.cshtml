@@ -1,0 +1,35 @@
+@page
+@model CisnerosM_LigaPro.Models.Equipo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<h1>Nombre</h1>
+<img src="~/images/logos/@Model.Logo" alt="Logo del equipo" />
+<form asp-action="Editar" method="post">
+    <input type="hidden" asp-for="Id" />
+    <label>Partidos Jugados:</label>
+    <input asp-for="PartidosJugados" id="PartidosJugados" />
+    <label>Ganados:</label>
+    <input asp-for="PartidosGanados" id="PartidosGanados" />
+    <label>Empatados:</label>
+    <input asp-for="PartidosEmpatados" id="PartidosEmpatados" />
+    <label>Perdidos:</label>
+    <input asp-for="PartidosPerdidos" id="PartidosPerdidos" />
+    <button type="button" onclick="calcularPuntos()">Calcular Puntos</button>
+    <p id="PuntosTotales"></p>
+    <button type="submit">Guardar</button>
+</form>
+<script>
+    function calcularPuntos() {
+        const ganados = parseInt(document.getElementById("PartidosGanados").value) || 0;
+        const empatados = parseInt(document.getElementById("PartidosEmpatados").value) || 0;
+        const puntos = (ganados * 3) + (empatados * 1);
+        document.getElementById("PuntosTotales").innerText = `Puntos Totales: ${puntos}`;
+    }
+</script>
+</html>

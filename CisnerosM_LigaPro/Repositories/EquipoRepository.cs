@@ -1,8 +1,10 @@
 using CisnerosM_LigaPro;
 using CisnerosM_LigaPro.Data;
 using Microsoft.EntityFrameworkCore;
+using CisnerosM_LigaPro.Models;
 
 namespace CisnerosM_LigaPro.Repositories
+
 {
     public class EquipoRepository
     {

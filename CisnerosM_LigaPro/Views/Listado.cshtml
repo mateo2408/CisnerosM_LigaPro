@@ -1,0 +1,40 @@
+@page
+@model IEnumerable<CisnerosM_LigaPro.Models.Jugador>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Número</th>
+        <th>Goles</th>
+        <th>Asistencias</th>
+        <th>Sueldo</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var jugador in Model)
+    {
+        <tr>
+            <td>@jugador.Nombre</td>
+            <td>@jugador.NumeroCamiseta</td>
+            <td>@jugador.Goles</td>
+            <td>@jugador.Asistencias</td>
+            <td>@jugador.Sueldo</td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@jugador.Id">Editar</a>
+                <a asp-action="Eliminar" asp-route-id="@jugador.Id">Eliminar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+</html>
